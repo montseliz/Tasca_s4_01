@@ -179,3 +179,9 @@ Que has d’entregar? (4 arxius):
 Executa des d’Eclipse els projectes creats als dos nivells anteriors, i mostra el retorn obtingut en cada projecte, quan crides a algunes de les peticions disponibles, fent servir els entorns creats i les seves variables.
 
 Hauràs d’entregar dues captures de pantalla, una per l’execució de cada entorn, i dos arxius amb format JSON, amb els entorns exportats.
+
+## Recursos utilitzats
+
+- https://www.baeldung.com/spring-request-param
+- https://www.baeldung.com/spring-requestparam-vs-pathvariable
+

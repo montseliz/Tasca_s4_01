@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 @RestController
 public class HelloWorldController {
     @GetMapping("/HelloWorld")
@@ -12,10 +14,11 @@ public class HelloWorldController {
         return "Hola, " + name + ". Estàs executant un projecte Maven.";
     }
     @GetMapping({"/HelloWorld2", "/HelloWorld2/{name}"})
-    public String hello2(@PathVariable(required = false) String name) {
-        if (name == null) {
-            name = "unknown";
-        }
-        return "Hola, " + name + ". Estàs executant un projecte Maven.";
+    public String hello2(@PathVariable(required = false) Optional<String> name) {
+
+        return "Hola, " + name.orElseGet(() -> "unknown") + ". Estàs executant un projecte Maven.";
     }
 }
+
+// Si utilitzem l'Optional, no necessitem defaultValue i amb el mètode orElseGet() evitem que
+// surti "null" quan no es proporciona un name.
